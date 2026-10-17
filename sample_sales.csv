@@ -1,0 +1,901 @@
+date,item,units
+2026-04-20,Croissant,30
+2026-04-20,Sourdough loaf,16
+2026-04-20,Cinnamon roll,15
+2026-04-20,Baguette,25
+2026-04-20,Banana bread slice,11
+2026-04-21,Croissant,42
+2026-04-21,Sourdough loaf,18
+2026-04-21,Cinnamon roll,27
+2026-04-21,Baguette,30
+2026-04-21,Banana bread slice,14
+2026-04-22,Croissant,38
+2026-04-22,Sourdough loaf,23
+2026-04-22,Cinnamon roll,21
+2026-04-22,Baguette,30
+2026-04-22,Banana bread slice,14
+2026-04-23,Croissant,30
+2026-04-23,Sourdough loaf,18
+2026-04-23,Cinnamon roll,23
+2026-04-23,Baguette,19
+2026-04-23,Banana bread slice,10
+2026-04-24,Croissant,47
+2026-04-24,Sourdough loaf,19
+2026-04-24,Cinnamon roll,27
+2026-04-24,Baguette,29
+2026-04-24,Banana bread slice,11
+2026-04-25,Croissant,88
+2026-04-25,Sourdough loaf,36
+2026-04-25,Cinnamon roll,43
+2026-04-25,Baguette,31
+2026-04-25,Banana bread slice,16
+2026-04-26,Croissant,57
+2026-04-26,Sourdough loaf,34
+2026-04-26,Cinnamon roll,43
+2026-04-26,Baguette,40
+2026-04-26,Banana bread slice,14
+2026-04-27,Croissant,28
+2026-04-27,Sourdough loaf,11
+2026-04-27,Cinnamon roll,16
+2026-04-27,Baguette,27
+2026-04-27,Banana bread slice,8
+2026-04-28,Croissant,32
+2026-04-28,Sourdough loaf,23
+2026-04-28,Cinnamon roll,27
+2026-04-28,Baguette,30
+2026-04-28,Banana bread slice,10
+2026-04-29,Croissant,38
+2026-04-29,Sourdough loaf,19
+2026-04-29,Cinnamon roll,25
+2026-04-29,Baguette,38
+2026-04-29,Banana bread slice,14
+2026-04-30,Croissant,49
+2026-04-30,Sourdough loaf,26
+2026-04-30,Cinnamon roll,24
+2026-04-30,Baguette,42
+2026-04-30,Banana bread slice,15
+2026-05-01,Croissant,39
+2026-05-01,Sourdough loaf,9
+2026-05-01,Cinnamon roll,17
+2026-05-01,Baguette,30
+2026-05-01,Banana bread slice,15
+2026-05-02,Croissant,86
+2026-05-02,Sourdough loaf,35
+2026-05-02,Cinnamon roll,28
+2026-05-02,Baguette,37
+2026-05-02,Banana bread slice,16
+2026-05-03,Croissant,46
+2026-05-03,Sourdough loaf,29
+2026-05-03,Cinnamon roll,35
+2026-05-03,Baguette,41
+2026-05-03,Banana bread slice,18
+2026-05-04,Croissant,29
+2026-05-04,Sourdough loaf,15
+2026-05-04,Cinnamon roll,13
+2026-05-04,Baguette,11
+2026-05-04,Banana bread slice,10
+2026-05-05,Croissant,42
+2026-05-05,Sourdough loaf,20
+2026-05-05,Cinnamon roll,27
+2026-05-05,Baguette,27
+2026-05-05,Banana bread slice,9
+2026-05-06,Croissant,44
+2026-05-06,Sourdough loaf,17
+2026-05-06,Cinnamon roll,24
+2026-05-06,Baguette,22
+2026-05-06,Banana bread slice,9
+2026-05-07,Croissant,48
+2026-05-07,Sourdough loaf,17
+2026-05-07,Cinnamon roll,20
+2026-05-07,Baguette,27
+2026-05-07,Banana bread slice,15
+2026-05-08,Croissant,30
+2026-05-08,Sourdough loaf,13
+2026-05-08,Cinnamon roll,18
+2026-05-08,Baguette,39
+2026-05-08,Banana bread slice,11
+2026-05-09,Croissant,69
+2026-05-09,Sourdough loaf,32
+2026-05-09,Cinnamon roll,32
+2026-05-09,Baguette,29
+2026-05-09,Banana bread slice,19
+2026-05-10,Croissant,50
+2026-05-10,Sourdough loaf,38
+2026-05-10,Cinnamon roll,30
+2026-05-10,Baguette,31
+2026-05-10,Banana bread slice,21
+2026-05-11,Croissant,34
+2026-05-11,Sourdough loaf,15
+2026-05-11,Cinnamon roll,20
+2026-05-11,Baguette,24
+2026-05-11,Banana bread slice,11
+2026-05-12,Croissant,33
+2026-05-12,Sourdough loaf,26
+2026-05-12,Cinnamon roll,17
+2026-05-12,Baguette,31
+2026-05-12,Banana bread slice,17
+2026-05-13,Croissant,52
+2026-05-13,Sourdough loaf,22
+2026-05-13,Cinnamon roll,24
+2026-05-13,Baguette,27
+2026-05-13,Banana bread slice,17
+2026-05-14,Croissant,36
+2026-05-14,Sourdough loaf,15
+2026-05-14,Cinnamon roll,17
+2026-05-14,Baguette,37
+2026-05-14,Banana bread slice,10
+2026-05-15,Croissant,37
+2026-05-15,Sourdough loaf,16
+2026-05-15,Cinnamon roll,26
+2026-05-15,Baguette,28
+2026-05-15,Banana bread slice,20
+2026-05-16,Croissant,56
+2026-05-16,Sourdough loaf,28
+2026-05-16,Cinnamon roll,34
+2026-05-16,Baguette,23
+2026-05-16,Banana bread slice,19
+2026-05-17,Croissant,60
+2026-05-17,Sourdough loaf,42
+2026-05-17,Cinnamon roll,40
+2026-05-17,Baguette,43
+2026-05-17,Banana bread slice,20
+2026-05-18,Croissant,26
+2026-05-18,Sourdough loaf,16
+2026-05-18,Cinnamon roll,24
+2026-05-18,Baguette,19
+2026-05-18,Banana bread slice,6
+2026-05-19,Croissant,43
+2026-05-19,Sourdough loaf,16
+2026-05-19,Cinnamon roll,27
+2026-05-19,Baguette,42
+2026-05-19,Banana bread slice,14
+2026-05-20,Croissant,49
+2026-05-20,Sourdough loaf,21
+2026-05-20,Cinnamon roll,25
+2026-05-20,Baguette,29
+2026-05-20,Banana bread slice,18
+2026-05-21,Croissant,47
+2026-05-21,Sourdough loaf,20
+2026-05-21,Cinnamon roll,33
+2026-05-21,Baguette,29
+2026-05-21,Banana bread slice,16
+2026-05-22,Croissant,44
+2026-05-22,Sourdough loaf,15
+2026-05-22,Cinnamon roll,19
+2026-05-22,Baguette,34
+2026-05-22,Banana bread slice,16
+2026-05-23,Croissant,67
+2026-05-23,Sourdough loaf,41
+2026-05-23,Cinnamon roll,36
+2026-05-23,Baguette,40
+2026-05-23,Banana bread slice,22
+2026-05-24,Croissant,67
+2026-05-24,Sourdough loaf,34
+2026-05-24,Cinnamon roll,40
+2026-05-24,Baguette,46
+2026-05-24,Banana bread slice,18
+2026-05-25,Croissant,36
+2026-05-25,Sourdough loaf,14
+2026-05-25,Cinnamon roll,19
+2026-05-25,Baguette,20
+2026-05-25,Banana bread slice,9
+2026-05-26,Croissant,39
+2026-05-26,Sourdough loaf,17
+2026-05-26,Cinnamon roll,34
+2026-05-26,Baguette,28
+2026-05-26,Banana bread slice,21
+2026-05-27,Croissant,46
+2026-05-27,Sourdough loaf,25
+2026-05-27,Cinnamon roll,24
+2026-05-27,Baguette,29
+2026-05-27,Banana bread slice,20
+2026-05-28,Croissant,48
+2026-05-28,Sourdough loaf,18
+2026-05-28,Cinnamon roll,19
+2026-05-28,Baguette,33
+2026-05-28,Banana bread slice,8
+2026-05-29,Croissant,49
+2026-05-29,Sourdough loaf,11
+2026-05-29,Cinnamon roll,20
+2026-05-29,Baguette,28
+2026-05-29,Banana bread slice,13
+2026-05-30,Croissant,69
+2026-05-30,Sourdough loaf,31
+2026-05-30,Cinnamon roll,29
+2026-05-30,Baguette,38
+2026-05-30,Banana bread slice,22
+2026-05-31,Croissant,58
+2026-05-31,Sourdough loaf,40
+2026-05-31,Cinnamon roll,43
+2026-05-31,Baguette,41
+2026-05-31,Banana bread slice,23
+2026-06-01,Croissant,26
+2026-06-01,Sourdough loaf,13
+2026-06-01,Cinnamon roll,16
+2026-06-01,Baguette,15
+2026-06-01,Banana bread slice,8
+2026-06-02,Croissant,60
+2026-06-02,Sourdough loaf,15
+2026-06-02,Cinnamon roll,23
+2026-06-02,Baguette,29
+2026-06-02,Banana bread slice,13
+2026-06-03,Croissant,36
+2026-06-03,Sourdough loaf,18
+2026-06-03,Cinnamon roll,29
+2026-06-03,Baguette,33
+2026-06-03,Banana bread slice,18
+2026-06-04,Croissant,49
+2026-06-04,Sourdough loaf,13
+2026-06-04,Cinnamon roll,25
+2026-06-04,Baguette,33
+2026-06-04,Banana bread slice,26
+2026-06-05,Croissant,40
+2026-06-05,Sourdough loaf,22
+2026-06-05,Cinnamon roll,29
+2026-06-05,Baguette,27
+2026-06-05,Banana bread slice,11
+2026-06-06,Croissant,64
+2026-06-06,Sourdough loaf,46
+2026-06-06,Cinnamon roll,41
+2026-06-06,Baguette,47
+2026-06-06,Banana bread slice,16
+2026-06-07,Croissant,77
+2026-06-07,Sourdough loaf,30
+2026-06-07,Cinnamon roll,44
+2026-06-07,Baguette,43
+2026-06-07,Banana bread slice,25
+2026-06-08,Croissant,30
+2026-06-08,Sourdough loaf,14
+2026-06-08,Cinnamon roll,9
+2026-06-08,Baguette,25
+2026-06-08,Banana bread slice,10
+2026-06-09,Croissant,42
+2026-06-09,Sourdough loaf,17
+2026-06-09,Cinnamon roll,25
+2026-06-09,Baguette,28
+2026-06-09,Banana bread slice,19
+2026-06-10,Croissant,48
+2026-06-10,Sourdough loaf,23
+2026-06-10,Cinnamon roll,23
+2026-06-10,Baguette,29
+2026-06-10,Banana bread slice,15
+2026-06-11,Croissant,37
+2026-06-11,Sourdough loaf,15
+2026-06-11,Cinnamon roll,23
+2026-06-11,Baguette,26
+2026-06-11,Banana bread slice,17
+2026-06-12,Croissant,35
+2026-06-12,Sourdough loaf,19
+2026-06-12,Cinnamon roll,14
+2026-06-12,Baguette,28
+2026-06-12,Banana bread slice,10
+2026-06-13,Croissant,78
+2026-06-13,Sourdough loaf,35
+2026-06-13,Cinnamon roll,29
+2026-06-13,Baguette,37
+2026-06-13,Banana bread slice,13
+2026-06-14,Croissant,89
+2026-06-14,Sourdough loaf,38
+2026-06-14,Cinnamon roll,34
+2026-06-14,Baguette,41
+2026-06-14,Banana bread slice,22
+2026-06-15,Croissant,32
+2026-06-15,Sourdough loaf,10
+2026-06-15,Cinnamon roll,20
+2026-06-15,Baguette,22
+2026-06-15,Banana bread slice,11
+2026-06-16,Croissant,41
+2026-06-16,Sourdough loaf,22
+2026-06-16,Cinnamon roll,16
+2026-06-16,Baguette,40
+2026-06-16,Banana bread slice,14
+2026-06-17,Croissant,28
+2026-06-17,Sourdough loaf,15
+2026-06-17,Cinnamon roll,31
+2026-06-17,Baguette,24
+2026-06-17,Banana bread slice,18
+2026-06-18,Croissant,43
+2026-06-18,Sourdough loaf,23
+2026-06-18,Cinnamon roll,28
+2026-06-18,Baguette,35
+2026-06-18,Banana bread slice,23
+2026-06-19,Croissant,43
+2026-06-19,Sourdough loaf,20
+2026-06-19,Cinnamon roll,17
+2026-06-19,Baguette,18
+2026-06-19,Banana bread slice,12
+2026-06-20,Croissant,67
+2026-06-20,Sourdough loaf,32
+2026-06-20,Cinnamon roll,29
+2026-06-20,Baguette,34
+2026-06-20,Banana bread slice,25
+2026-06-21,Croissant,66
+2026-06-21,Sourdough loaf,31
+2026-06-21,Cinnamon roll,31
+2026-06-21,Baguette,51
+2026-06-21,Banana bread slice,25
+2026-06-22,Croissant,34
+2026-06-22,Sourdough loaf,20
+2026-06-22,Cinnamon roll,10
+2026-06-22,Baguette,30
+2026-06-22,Banana bread slice,19
+2026-06-23,Croissant,32
+2026-06-23,Sourdough loaf,20
+2026-06-23,Cinnamon roll,26
+2026-06-23,Baguette,36
+2026-06-23,Banana bread slice,18
+2026-06-24,Croissant,58
+2026-06-24,Sourdough loaf,29
+2026-06-24,Cinnamon roll,21
+2026-06-24,Baguette,29
+2026-06-24,Banana bread slice,17
+2026-06-25,Croissant,36
+2026-06-25,Sourdough loaf,24
+2026-06-25,Cinnamon roll,25
+2026-06-25,Baguette,25
+2026-06-25,Banana bread slice,16
+2026-06-26,Croissant,50
+2026-06-26,Sourdough loaf,18
+2026-06-26,Cinnamon roll,18
+2026-06-26,Baguette,33
+2026-06-26,Banana bread slice,16
+2026-06-27,Croissant,73
+2026-06-27,Sourdough loaf,34
+2026-06-27,Cinnamon roll,33
+2026-06-27,Baguette,43
+2026-06-27,Banana bread slice,37
+2026-06-28,Croissant,65
+2026-06-28,Sourdough loaf,50
+2026-06-28,Cinnamon roll,32
+2026-06-28,Baguette,43
+2026-06-28,Banana bread slice,20
+2026-06-29,Croissant,21
+2026-06-29,Sourdough loaf,12
+2026-06-29,Cinnamon roll,15
+2026-06-29,Baguette,24
+2026-06-29,Banana bread slice,19
+2026-06-30,Croissant,34
+2026-06-30,Sourdough loaf,22
+2026-06-30,Cinnamon roll,20
+2026-06-30,Baguette,21
+2026-06-30,Banana bread slice,21
+2026-07-01,Croissant,47
+2026-07-01,Sourdough loaf,17
+2026-07-01,Cinnamon roll,33
+2026-07-01,Baguette,32
+2026-07-01,Banana bread slice,11
+2026-07-02,Croissant,49
+2026-07-02,Sourdough loaf,25
+2026-07-02,Cinnamon roll,17
+2026-07-02,Baguette,26
+2026-07-02,Banana bread slice,18
+2026-07-03,Croissant,45
+2026-07-03,Sourdough loaf,20
+2026-07-03,Cinnamon roll,26
+2026-07-03,Baguette,27
+2026-07-03,Banana bread slice,28
+2026-07-04,Croissant,59
+2026-07-04,Sourdough loaf,24
+2026-07-04,Cinnamon roll,31
+2026-07-04,Baguette,31
+2026-07-04,Banana bread slice,22
+2026-07-05,Croissant,75
+2026-07-05,Sourdough loaf,38
+2026-07-05,Cinnamon roll,37
+2026-07-05,Baguette,43
+2026-07-05,Banana bread slice,24
+2026-07-06,Croissant,30
+2026-07-06,Sourdough loaf,6
+2026-07-06,Cinnamon roll,14
+2026-07-06,Baguette,18
+2026-07-06,Banana bread slice,10
+2026-07-07,Croissant,62
+2026-07-07,Sourdough loaf,20
+2026-07-07,Cinnamon roll,19
+2026-07-07,Baguette,26
+2026-07-07,Banana bread slice,17
+2026-07-08,Croissant,57
+2026-07-08,Sourdough loaf,25
+2026-07-08,Cinnamon roll,21
+2026-07-08,Baguette,20
+2026-07-08,Banana bread slice,21
+2026-07-09,Croissant,52
+2026-07-09,Sourdough loaf,34
+2026-07-09,Cinnamon roll,24
+2026-07-09,Baguette,25
+2026-07-09,Banana bread slice,17
+2026-07-10,Croissant,36
+2026-07-10,Sourdough loaf,29
+2026-07-10,Cinnamon roll,16
+2026-07-10,Baguette,31
+2026-07-10,Banana bread slice,19
+2026-07-11,Croissant,77
+2026-07-11,Sourdough loaf,35
+2026-07-11,Cinnamon roll,40
+2026-07-11,Baguette,43
+2026-07-11,Banana bread slice,31
+2026-07-12,Croissant,73
+2026-07-12,Sourdough loaf,41
+2026-07-12,Cinnamon roll,45
+2026-07-12,Baguette,32
+2026-07-12,Banana bread slice,16
+2026-07-13,Croissant,33
+2026-07-13,Sourdough loaf,9
+2026-07-13,Cinnamon roll,19
+2026-07-13,Baguette,15
+2026-07-13,Banana bread slice,16
+2026-07-14,Croissant,54
+2026-07-14,Sourdough loaf,21
+2026-07-14,Cinnamon roll,23
+2026-07-14,Baguette,34
+2026-07-14,Banana bread slice,19
+2026-07-15,Croissant,52
+2026-07-15,Sourdough loaf,23
+2026-07-15,Cinnamon roll,22
+2026-07-15,Baguette,29
+2026-07-15,Banana bread slice,18
+2026-07-16,Croissant,44
+2026-07-16,Sourdough loaf,31
+2026-07-16,Cinnamon roll,14
+2026-07-16,Baguette,18
+2026-07-16,Banana bread slice,16
+2026-07-17,Croissant,42
+2026-07-17,Sourdough loaf,18
+2026-07-17,Cinnamon roll,34
+2026-07-17,Baguette,37
+2026-07-17,Banana bread slice,18
+2026-07-18,Croissant,68
+2026-07-18,Sourdough loaf,27
+2026-07-18,Cinnamon roll,35
+2026-07-18,Baguette,31
+2026-07-18,Banana bread slice,22
+2026-07-19,Croissant,80
+2026-07-19,Sourdough loaf,25
+2026-07-19,Cinnamon roll,35
+2026-07-19,Baguette,47
+2026-07-19,Banana bread slice,32
+2026-07-20,Croissant,40
+2026-07-20,Sourdough loaf,17
+2026-07-20,Cinnamon roll,12
+2026-07-20,Baguette,22
+2026-07-20,Banana bread slice,22
+2026-07-21,Croissant,39
+2026-07-21,Sourdough loaf,26
+2026-07-21,Cinnamon roll,22
+2026-07-21,Baguette,33
+2026-07-21,Banana bread slice,14
+2026-07-22,Croissant,56
+2026-07-22,Sourdough loaf,11
+2026-07-22,Cinnamon roll,20
+2026-07-22,Baguette,31
+2026-07-22,Banana bread slice,19
+2026-07-23,Croissant,48
+2026-07-23,Sourdough loaf,24
+2026-07-23,Cinnamon roll,27
+2026-07-23,Baguette,45
+2026-07-23,Banana bread slice,18
+2026-07-24,Croissant,48
+2026-07-24,Sourdough loaf,14
+2026-07-24,Cinnamon roll,28
+2026-07-24,Baguette,23
+2026-07-24,Banana bread slice,21
+2026-07-25,Croissant,74
+2026-07-25,Sourdough loaf,36
+2026-07-25,Cinnamon roll,24
+2026-07-25,Baguette,29
+2026-07-25,Banana bread slice,34
+2026-07-26,Croissant,68
+2026-07-26,Sourdough loaf,35
+2026-07-26,Cinnamon roll,21
+2026-07-26,Baguette,28
+2026-07-26,Banana bread slice,23
+2026-07-27,Croissant,28
+2026-07-27,Sourdough loaf,18
+2026-07-27,Cinnamon roll,13
+2026-07-27,Baguette,24
+2026-07-27,Banana bread slice,16
+2026-07-28,Croissant,61
+2026-07-28,Sourdough loaf,19
+2026-07-28,Cinnamon roll,17
+2026-07-28,Baguette,38
+2026-07-28,Banana bread slice,24
+2026-07-29,Croissant,30
+2026-07-29,Sourdough loaf,21
+2026-07-29,Cinnamon roll,22
+2026-07-29,Baguette,33
+2026-07-29,Banana bread slice,11
+2026-07-30,Croissant,57
+2026-07-30,Sourdough loaf,22
+2026-07-30,Cinnamon roll,31
+2026-07-30,Baguette,28
+2026-07-30,Banana bread slice,26
+2026-07-31,Croissant,35
+2026-07-31,Sourdough loaf,36
+2026-07-31,Cinnamon roll,26
+2026-07-31,Baguette,29
+2026-07-31,Banana bread slice,25
+2026-08-01,Croissant,81
+2026-08-01,Sourdough loaf,37
+2026-08-01,Cinnamon roll,30
+2026-08-01,Baguette,34
+2026-08-01,Banana bread slice,26
+2026-08-02,Croissant,71
+2026-08-02,Sourdough loaf,48
+2026-08-02,Cinnamon roll,31
+2026-08-02,Baguette,42
+2026-08-02,Banana bread slice,29
+2026-08-03,Croissant,30
+2026-08-03,Sourdough loaf,12
+2026-08-03,Cinnamon roll,17
+2026-08-03,Baguette,26
+2026-08-03,Banana bread slice,13
+2026-08-04,Croissant,35
+2026-08-04,Sourdough loaf,23
+2026-08-04,Cinnamon roll,21
+2026-08-04,Baguette,34
+2026-08-04,Banana bread slice,26
+2026-08-05,Croissant,36
+2026-08-05,Sourdough loaf,28
+2026-08-05,Cinnamon roll,25
+2026-08-05,Baguette,33
+2026-08-05,Banana bread slice,20
+2026-08-06,Croissant,48
+2026-08-06,Sourdough loaf,23
+2026-08-06,Cinnamon roll,20
+2026-08-06,Baguette,27
+2026-08-06,Banana bread slice,22
+2026-08-07,Croissant,41
+2026-08-07,Sourdough loaf,13
+2026-08-07,Cinnamon roll,28
+2026-08-07,Baguette,22
+2026-08-07,Banana bread slice,16
+2026-08-08,Croissant,76
+2026-08-08,Sourdough loaf,35
+2026-08-08,Cinnamon roll,28
+2026-08-08,Baguette,31
+2026-08-08,Banana bread slice,26
+2026-08-09,Croissant,85
+2026-08-09,Sourdough loaf,31
+2026-08-09,Cinnamon roll,32
+2026-08-09,Baguette,42
+2026-08-09,Banana bread slice,26
+2026-08-10,Croissant,44
+2026-08-10,Sourdough loaf,14
+2026-08-10,Cinnamon roll,17
+2026-08-10,Baguette,25
+2026-08-10,Banana bread slice,18
+2026-08-11,Croissant,47
+2026-08-11,Sourdough loaf,20
+2026-08-11,Cinnamon roll,16
+2026-08-11,Baguette,29
+2026-08-11,Banana bread slice,33
+2026-08-12,Croissant,51
+2026-08-12,Sourdough loaf,25
+2026-08-12,Cinnamon roll,26
+2026-08-12,Baguette,33
+2026-08-12,Banana bread slice,21
+2026-08-13,Croissant,39
+2026-08-13,Sourdough loaf,20
+2026-08-13,Cinnamon roll,27
+2026-08-13,Baguette,25
+2026-08-13,Banana bread slice,16
+2026-08-14,Croissant,63
+2026-08-14,Sourdough loaf,22
+2026-08-14,Cinnamon roll,20
+2026-08-14,Baguette,30
+2026-08-14,Banana bread slice,21
+2026-08-15,Croissant,87
+2026-08-15,Sourdough loaf,38
+2026-08-15,Cinnamon roll,21
+2026-08-15,Baguette,36
+2026-08-15,Banana bread slice,38
+2026-08-16,Croissant,66
+2026-08-16,Sourdough loaf,32
+2026-08-16,Cinnamon roll,41
+2026-08-16,Baguette,33
+2026-08-16,Banana bread slice,31
+2026-08-17,Croissant,29
+2026-08-17,Sourdough loaf,15
+2026-08-17,Cinnamon roll,14
+2026-08-17,Baguette,12
+2026-08-17,Banana bread slice,13
+2026-08-18,Croissant,41
+2026-08-18,Sourdough loaf,28
+2026-08-18,Cinnamon roll,18
+2026-08-18,Baguette,29
+2026-08-18,Banana bread slice,23
+2026-08-19,Croissant,36
+2026-08-19,Sourdough loaf,22
+2026-08-19,Cinnamon roll,23
+2026-08-19,Baguette,22
+2026-08-19,Banana bread slice,21
+2026-08-20,Croissant,52
+2026-08-20,Sourdough loaf,19
+2026-08-20,Cinnamon roll,29
+2026-08-20,Baguette,27
+2026-08-20,Banana bread slice,26
+2026-08-21,Croissant,45
+2026-08-21,Sourdough loaf,28
+2026-08-21,Cinnamon roll,19
+2026-08-21,Baguette,33
+2026-08-21,Banana bread slice,23
+2026-08-22,Croissant,82
+2026-08-22,Sourdough loaf,39
+2026-08-22,Cinnamon roll,30
+2026-08-22,Baguette,34
+2026-08-22,Banana bread slice,24
+2026-08-23,Croissant,75
+2026-08-23,Sourdough loaf,37
+2026-08-23,Cinnamon roll,35
+2026-08-23,Baguette,38
+2026-08-23,Banana bread slice,30
+2026-08-24,Croissant,31
+2026-08-24,Sourdough loaf,21
+2026-08-24,Cinnamon roll,16
+2026-08-24,Baguette,21
+2026-08-24,Banana bread slice,17
+2026-08-25,Croissant,48
+2026-08-25,Sourdough loaf,16
+2026-08-25,Cinnamon roll,19
+2026-08-25,Baguette,33
+2026-08-25,Banana bread slice,23
+2026-08-26,Croissant,56
+2026-08-26,Sourdough loaf,14
+2026-08-26,Cinnamon roll,18
+2026-08-26,Baguette,38
+2026-08-26,Banana bread slice,27
+2026-08-27,Croissant,54
+2026-08-27,Sourdough loaf,17
+2026-08-27,Cinnamon roll,19
+2026-08-27,Baguette,19
+2026-08-27,Banana bread slice,24
+2026-08-28,Croissant,46
+2026-08-28,Sourdough loaf,21
+2026-08-28,Cinnamon roll,21
+2026-08-28,Baguette,35
+2026-08-28,Banana bread slice,24
+2026-08-29,Croissant,85
+2026-08-29,Sourdough loaf,47
+2026-08-29,Cinnamon roll,33
+2026-08-29,Baguette,43
+2026-08-29,Banana bread slice,26
+2026-08-30,Croissant,75
+2026-08-30,Sourdough loaf,43
+2026-08-30,Cinnamon roll,34
+2026-08-30,Baguette,42
+2026-08-30,Banana bread slice,26
+2026-08-31,Croissant,28
+2026-08-31,Sourdough loaf,14
+2026-08-31,Cinnamon roll,15
+2026-08-31,Baguette,17
+2026-08-31,Banana bread slice,21
+2026-09-01,Croissant,50
+2026-09-01,Sourdough loaf,21
+2026-09-01,Cinnamon roll,21
+2026-09-01,Baguette,26
+2026-09-01,Banana bread slice,30
+2026-09-02,Croissant,42
+2026-09-02,Sourdough loaf,23
+2026-09-02,Cinnamon roll,29
+2026-09-02,Baguette,29
+2026-09-02,Banana bread slice,20
+2026-09-03,Croissant,55
+2026-09-03,Sourdough loaf,25
+2026-09-03,Cinnamon roll,16
+2026-09-03,Baguette,33
+2026-09-03,Banana bread slice,25
+2026-09-04,Croissant,43
+2026-09-04,Sourdough loaf,21
+2026-09-04,Cinnamon roll,15
+2026-09-04,Baguette,24
+2026-09-04,Banana bread slice,20
+2026-09-05,Croissant,70
+2026-09-05,Sourdough loaf,48
+2026-09-05,Cinnamon roll,20
+2026-09-05,Baguette,39
+2026-09-05,Banana bread slice,36
+2026-09-06,Croissant,79
+2026-09-06,Sourdough loaf,40
+2026-09-06,Cinnamon roll,22
+2026-09-06,Baguette,34
+2026-09-06,Banana bread slice,36
+2026-09-07,Croissant,29
+2026-09-07,Sourdough loaf,13
+2026-09-07,Cinnamon roll,13
+2026-09-07,Baguette,27
+2026-09-07,Banana bread slice,18
+2026-09-08,Croissant,44
+2026-09-08,Sourdough loaf,14
+2026-09-08,Cinnamon roll,22
+2026-09-08,Baguette,28
+2026-09-08,Banana bread slice,18
+2026-09-09,Croissant,39
+2026-09-09,Sourdough loaf,30
+2026-09-09,Cinnamon roll,16
+2026-09-09,Baguette,29
+2026-09-09,Banana bread slice,39
+2026-09-10,Croissant,46
+2026-09-10,Sourdough loaf,25
+2026-09-10,Cinnamon roll,25
+2026-09-10,Baguette,27
+2026-09-10,Banana bread slice,36
+2026-09-11,Croissant,46
+2026-09-11,Sourdough loaf,33
+2026-09-11,Cinnamon roll,13
+2026-09-11,Baguette,33
+2026-09-11,Banana bread slice,27
+2026-09-12,Croissant,95
+2026-09-12,Sourdough loaf,35
+2026-09-12,Cinnamon roll,23
+2026-09-12,Baguette,59
+2026-09-12,Banana bread slice,28
+2026-09-13,Croissant,66
+2026-09-13,Sourdough loaf,48
+2026-09-13,Cinnamon roll,30
+2026-09-13,Baguette,43
+2026-09-13,Banana bread slice,30
+2026-09-14,Croissant,31
+2026-09-14,Sourdough loaf,14
+2026-09-14,Cinnamon roll,14
+2026-09-14,Baguette,19
+2026-09-14,Banana bread slice,17
+2026-09-15,Croissant,65
+2026-09-15,Sourdough loaf,28
+2026-09-15,Cinnamon roll,23
+2026-09-15,Baguette,26
+2026-09-15,Banana bread slice,22
+2026-09-16,Croissant,49
+2026-09-16,Sourdough loaf,27
+2026-09-16,Cinnamon roll,29
+2026-09-16,Baguette,26
+2026-09-16,Banana bread slice,24
+2026-09-17,Croissant,58
+2026-09-17,Sourdough loaf,22
+2026-09-17,Cinnamon roll,18
+2026-09-17,Baguette,32
+2026-09-17,Banana bread slice,27
+2026-09-18,Croissant,51
+2026-09-18,Sourdough loaf,23
+2026-09-18,Cinnamon roll,25
+2026-09-18,Baguette,31
+2026-09-18,Banana bread slice,33
+2026-09-19,Croissant,95
+2026-09-19,Sourdough loaf,39
+2026-09-19,Cinnamon roll,25
+2026-09-19,Baguette,34
+2026-09-19,Banana bread slice,24
+2026-09-20,Croissant,78
+2026-09-20,Sourdough loaf,37
+2026-09-20,Cinnamon roll,32
+2026-09-20,Baguette,41
+2026-09-20,Banana bread slice,34
+2026-09-21,Croissant,31
+2026-09-21,Sourdough loaf,18
+2026-09-21,Cinnamon roll,23
+2026-09-21,Baguette,17
+2026-09-21,Banana bread slice,24
+2026-09-22,Croissant,62
+2026-09-22,Sourdough loaf,23
+2026-09-22,Cinnamon roll,27
+2026-09-22,Baguette,32
+2026-09-22,Banana bread slice,29
+2026-09-23,Croissant,61
+2026-09-23,Sourdough loaf,23
+2026-09-23,Cinnamon roll,17
+2026-09-23,Baguette,36
+2026-09-23,Banana bread slice,24
+2026-09-24,Croissant,59
+2026-09-24,Sourdough loaf,28
+2026-09-24,Cinnamon roll,17
+2026-09-24,Baguette,32
+2026-09-24,Banana bread slice,35
+2026-09-25,Croissant,56
+2026-09-25,Sourdough loaf,22
+2026-09-25,Cinnamon roll,26
+2026-09-25,Baguette,39
+2026-09-25,Banana bread slice,22
+2026-09-26,Croissant,76
+2026-09-26,Sourdough loaf,42
+2026-09-26,Cinnamon roll,32
+2026-09-26,Baguette,31
+2026-09-26,Banana bread slice,41
+2026-09-27,Croissant,77
+2026-09-27,Sourdough loaf,35
+2026-09-27,Cinnamon roll,23
+2026-09-27,Baguette,37
+2026-09-27,Banana bread slice,33
+2026-09-28,Croissant,44
+2026-09-28,Sourdough loaf,22
+2026-09-28,Cinnamon roll,17
+2026-09-28,Baguette,22
+2026-09-28,Banana bread slice,24
+2026-09-29,Croissant,59
+2026-09-29,Sourdough loaf,19
+2026-09-29,Cinnamon roll,21
+2026-09-29,Baguette,35
+2026-09-29,Banana bread slice,21
+2026-09-30,Croissant,45
+2026-09-30,Sourdough loaf,33
+2026-09-30,Cinnamon roll,20
+2026-09-30,Baguette,33
+2026-09-30,Banana bread slice,26
+2026-10-01,Croissant,44
+2026-10-01,Sourdough loaf,25
+2026-10-01,Cinnamon roll,18
+2026-10-01,Baguette,31
+2026-10-01,Banana bread slice,34
+2026-10-02,Croissant,55
+2026-10-02,Sourdough loaf,25
+2026-10-02,Cinnamon roll,12
+2026-10-02,Baguette,30
+2026-10-02,Banana bread slice,33
+2026-10-03,Croissant,77
+2026-10-03,Sourdough loaf,36
+2026-10-03,Cinnamon roll,26
+2026-10-03,Baguette,36
+2026-10-03,Banana bread slice,28
+2026-10-04,Croissant,93
+2026-10-04,Sourdough loaf,48
+2026-10-04,Cinnamon roll,31
+2026-10-04,Baguette,35
+2026-10-04,Banana bread slice,29
+2026-10-05,Croissant,27
+2026-10-05,Sourdough loaf,10
+2026-10-05,Cinnamon roll,17
+2026-10-05,Baguette,23
+2026-10-05,Banana bread slice,22
+2026-10-06,Croissant,56
+2026-10-06,Sourdough loaf,20
+2026-10-06,Cinnamon roll,13
+2026-10-06,Baguette,32
+2026-10-06,Banana bread slice,27
+2026-10-07,Croissant,45
+2026-10-07,Sourdough loaf,27
+2026-10-07,Cinnamon roll,21
+2026-10-07,Baguette,32
+2026-10-07,Banana bread slice,21
+2026-10-08,Croissant,58
+2026-10-08,Sourdough loaf,27
+2026-10-08,Cinnamon roll,13
+2026-10-08,Baguette,33
+2026-10-08,Banana bread slice,31
+2026-10-09,Croissant,38
+2026-10-09,Sourdough loaf,29
+2026-10-09,Cinnamon roll,20
+2026-10-09,Baguette,34
+2026-10-09,Banana bread slice,29
+2026-10-10,Croissant,87
+2026-10-10,Sourdough loaf,36
+2026-10-10,Cinnamon roll,30
+2026-10-10,Baguette,38
+2026-10-10,Banana bread slice,34
+2026-10-11,Croissant,83
+2026-10-11,Sourdough loaf,40
+2026-10-11,Cinnamon roll,29
+2026-10-11,Baguette,36
+2026-10-11,Banana bread slice,39
+2026-10-12,Croissant,37
+2026-10-12,Sourdough loaf,20
+2026-10-12,Cinnamon roll,13
+2026-10-12,Baguette,24
+2026-10-12,Banana bread slice,18
+2026-10-13,Croissant,62
+2026-10-13,Sourdough loaf,29
+2026-10-13,Cinnamon roll,22
+2026-10-13,Baguette,23
+2026-10-13,Banana bread slice,31
+2026-10-14,Croissant,57
+2026-10-14,Sourdough loaf,22
+2026-10-14,Cinnamon roll,12
+2026-10-14,Baguette,28
+2026-10-14,Banana bread slice,39
+2026-10-15,Croissant,61
+2026-10-15,Sourdough loaf,24
+2026-10-15,Cinnamon roll,17
+2026-10-15,Baguette,38
+2026-10-15,Banana bread slice,34
+2026-10-16,Croissant,44
+2026-10-16,Sourdough loaf,25
+2026-10-16,Cinnamon roll,15
+2026-10-16,Baguette,27
+2026-10-16,Banana bread slice,32

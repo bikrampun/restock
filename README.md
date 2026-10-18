@@ -2,7 +2,9 @@
 
 Upload past sales, get next week's demand per item with a safe amount to prep or order. Built on [TabPFN](https://github.com/PriorLabs/TabPFN), an open-weight foundation model for tabular data.
 
-**Live demo:** https://restock-4nle.onrender.com (free instance: the first visit can take up to a minute to wake up; click "Try it with sample bakery data").
+**Live demo:** https://restock-4nle.onrender.com (click "Try it with sample bakery data"; no file needed).
+
+**How it works:** [Restock on DEV](https://dev.to/bikrampun/restock-next-weeks-order-for-small-shops-from-the-sales-file-they-already-have-5e18), with the architecture diagram and the accuracy check.
 
 Before showing a forecast, it hides your last 7 days, forecasts them, and tells you how far off it was compared with "same as last week".
 

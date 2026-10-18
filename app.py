@@ -111,14 +111,25 @@ if file is None and not st.session_state.get("sample"):
 raw = pd.read_csv(file if file is not None else "sample_sales.csv")
 cols = list(raw.columns)
 guess = lambda *names: next((i for i, c in enumerate(cols) if c.lower() in names), 0)
-c1, c2, c3 = st.columns(3)
+c1, c2, c3, c4 = st.columns(4)
 date_col = c1.selectbox("Date column", cols, guess("date", "day", "sold_at"))
 item_col = c2.selectbox("Item column", cols, guess("item", "product", "name", "sku"))
 units_col = c3.selectbox("Units column", cols, guess("units", "qty", "quantity", "sold"))
+stock_col = c4.selectbox("Stock column (optional)", ["(none)"] + cols,  # some POS exports carry stock on hand
+    next((i + 1 for i, c in enumerate(cols) if c.lower() in ("stock", "on_hand", "qty_on_hand", "stock_on_hand", "closing_stock", "soh")), 0))
 
-if len({date_col, item_col, units_col}) < 3:
-    st.error("Your file needs three different columns: a date, an item, and units sold.")
+picked = [date_col, item_col, units_col] + ([stock_col] if stock_col != "(none)" else [])
+if len(set(picked)) < len(picked):
+    st.error("Pick a different column for each box: a date, an item, units sold (and stock, if your file has it).")
     st.stop()
+
+blank = raw[[date_col, item_col, units_col]].isna().any(axis=1)  # a blank item would become an item called "nan"
+if blank.any():  # spreadsheet row = index + 2: the header is row 1 and pandas counts from 0
+    rows = (raw.index[blank] + 2).tolist()
+    shown = ", ".join(map(str, rows[:5])) + (f" and {len(rows) - 5} more" if len(rows) > 5 else "")
+    s = "s" * (len(rows) > 1)
+    st.info(f"Skipped {len(rows)} row{s} with a missing date, item or units (row{s} {shown}).")
+    raw = raw[~blank]
 
 try:
     df = pd.DataFrame({
@@ -126,16 +137,24 @@ try:
         "item": raw[item_col].astype(str).str.strip(),
         "units": pd.to_numeric(raw[units_col], errors="raise"),
     })
-except (ValueError, TypeError) as e:
-    st.error(f"Couldn't read those columns. Dates should look like 2026-08-01 or 01/08/2026, units should be numbers. ({str(e).splitlines()[0]})")
+    if stock_col != "(none)":  # an unreadable stock cell counts as missing; units still has to be clean
+        df["stock"] = pd.to_numeric(raw[stock_col], errors="coerce")
+except (ValueError, TypeError) as e:  # name the spreadsheet row: pandas' "position" skips the header and dedupes dates
+    coerce = lambda **kw: pd.to_datetime(raw[date_col], errors="coerce", **kw)
+    bad_date = raw[date_col][coerce().fillna(coerce(dayfirst=True)).isna()]
+    bad_units = raw[units_col][pd.to_numeric(raw[units_col], errors="coerce").isna()]
+    bad, what = (bad_date, "a date") if len(bad_date) else (bad_units, "a number")
+    where = f"Row {bad.index[0] + 2}: \"{bad.iloc[0]}\" isn't {what}." if len(bad) else f"({str(e).splitlines()[0]})"
+    st.error(f"Couldn't read your file. {where} Dates should look like 2026-08-01 or 01/08/2026, units should be numbers.")
     st.stop()
 
 today, last = pd.Timestamp.today().normalize(), df["date"].max()
 if file is None:  # keep the demo current: move the sample forward by whole weeks, so weekdays still line up
     df["date"] += pd.Timedelta(7 * ((today - pd.Timedelta(1, "D") - last).days // 7), "D")
-elif today - last > pd.Timedelta(7, "D"):
-    st.warning(f"Your sales end on {last:%d %b %Y}, so this forecast covers dates that have already passed. "
-               "Upload newer sales for next week's order.")
+elif (today - last).days > 2:  # forecast starts the day after the last sale; warn once most of it isn't ahead
+    passed = min((today - last).days - 1, HORIZON)
+    st.warning(f"Your sales end on {last:%a %d %b}, so {'all 7' if passed == HORIZON else f'{passed} of the 7'} forecast days "
+               "have already passed. Upload newer sales for next week's order.")
 
 # "croissant" and "Croissant" are one item: use its most common spelling
 df["item"] = df["item"].groupby(df["item"].str.casefold()).transform(lambda s: s.mode()[0])
@@ -163,9 +182,20 @@ st.table(plan)  # plain table: nothing to click, so it doesn't look editable
 st.caption("Safe amount: enough if every day runs busy.")
 
 st.subheader("What to order")
-st.caption("✏️ Type how many you have on the shelf now in **In stock now**, then press Enter. The order below updates.")
+if "stock" in df:  # the latest row's stock, blank or not, never an older count (older = too high = run out)
+    latest = df.sort_values("date", kind="stable").groupby("item").tail(1)
+    on_hand = latest.set_index("item")["stock"].reindex(plan.index)
+    st.caption("✏️ Filled in from your file's latest stock. Change any number in **In stock now**, then press Enter.")
+    missing = latest[latest["stock"].isna() & latest["item"].isin(plan.index)]
+    if len(missing):
+        st.warning("Stock is blank or not a number on the latest row for "
+                   + ", ".join(f"{item} (row {i + 2})" for i, item in missing["item"].items())
+                   + ". It shows 0 below; type the real count.")
+else:
+    on_hand = pd.Series(index=plan.index, dtype=float)
+    st.caption("✏️ Type how many you have on the shelf now in **In stock now**, then press Enter. The order below updates.")
 stock = st.data_editor(
-    pd.DataFrame({"In stock now": 0}, index=plan.index),
+    pd.DataFrame({"In stock now": on_hand.fillna(0).clip(lower=0).round().astype(int)}),
     column_config={"In stock now": st.column_config.NumberColumn(min_value=0, step=1)},
     width="stretch",
 )["In stock now"].fillna(0).astype(int)  # a cleared cell comes back empty

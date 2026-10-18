@@ -16,7 +16,7 @@ streamlit run app.py
 
 Private mode: if the `tabpfn` package is installed, the app uses TabPFN's downloadable weights on your own machine instead of the API, so sales data stays on the laptop. Not yet tested end to end; the weights need a license accepted at platform.priorlabs.ai.
 
-CSV format: any columns for date, item and units sold. One row per sale or per day both work. Dates can be `2026-08-01` or day-first `01/08/2026`. At least 3 weeks of history.
+CSV format: any columns for date, item and units sold. One row per sale or per day both work. Dates can be `2026-08-01` or day-first `01/08/2026`. At least 3 weeks of history. Optional: a stock-on-hand column (e.g. `stock`, `qty_on_hand`); Restock fills "In stock now" from each item's latest value.
 
 ## License
 

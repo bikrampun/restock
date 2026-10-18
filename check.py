@@ -25,7 +25,8 @@ assert not at.exception and not at.error, (at.exception, at.error)
 plan = at.table[0].value
 assert len(plan) == 5 and (plan.iloc[:, 1] >= plan.iloc[:, 0]).all(), plan
 accuracy = next(c.value for c in at.caption if "units per item per day" in c.value)
-assert "Order to cover" in at.code[0].value, at.code[0].value  # stock defaults to 0, so everything is ordered
+msg = at.code[0].value  # sample's stock column: Croissant 500 covers it, Baguette 100 only part
+assert "Order to cover" in msg and "Croissant" not in msg and "Baguette" in msg, msg
 print(plan, accuracy, at.code[0].value, sep="\n\n")
 
 from app import order_message, parse_dates, skip_items  # noqa: E402  (importing reruns the app once with the fake model)

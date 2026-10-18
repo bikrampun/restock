@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()  # local dev reads TABPFN_TOKEN from .env; Render sets it in the dashboard
 
 try:  # open weights on your own machine: pip install tabpfn
-    from tabpfn import TabPFNRegressor
+    from tabpfn import TabPFNRegressor  # type: ignore  # optional, not in requirements.txt
     RUNTIME = "local TabPFN weights"
 except ImportError:  # hosted: reads TABPFN_TOKEN from the environment
     from tabpfn_client import TabPFNRegressor
@@ -34,7 +34,7 @@ def featurize(df, items, t0):
 def forecast(hist):
     items = sorted(hist["item"].unique())
     t0 = hist["date"].min()
-    dates = pd.date_range(hist["date"].max() + pd.Timedelta(days=1), periods=HORIZON)
+    dates = pd.date_range(hist["date"].max() + pd.Timedelta(1, "D"), periods=HORIZON)
     future = pd.MultiIndex.from_product([dates, items], names=["date", "item"]).to_frame(index=False)
     model = TabPFNRegressor(categorical_features_indices=[0])
     model.fit(featurize(hist, items, t0), hist["units"])
@@ -44,10 +44,10 @@ def forecast(hist):
 
 def backtest(hist):
     """Hide the last week, forecast it, and compare with 'same as last week'."""
-    cut = hist["date"].max() - pd.Timedelta(days=HORIZON)
+    cut = hist["date"].max() - pd.Timedelta(HORIZON, "D")
     actual = hist[hist["date"] > cut]
     pred = forecast(hist[hist["date"] <= cut]).merge(actual, on=["date", "item"], suffixes=("_pred", ""))
-    last_week = hist.assign(date=hist["date"] + pd.Timedelta(days=HORIZON))
+    last_week = hist.assign(date=hist["date"] + pd.Timedelta(HORIZON, "D"))
     naive = actual.merge(last_week, on=["date", "item"], suffixes=("", "_naive"))
     return (pred["units_pred"] - pred["units"]).abs().mean(), (naive["units_naive"] - naive["units"]).abs().mean()
 
@@ -98,7 +98,7 @@ plan.columns = ["Expected", "Safe amount (if every day runs busy)"]
 st.dataframe(plan, width="stretch")
 
 item = st.selectbox("Day by day for", plan.index)
-recent = hist[(hist["item"] == item) & (hist["date"] > hist["date"].max() - pd.Timedelta(days=28))]
+recent = hist[(hist["item"] == item) & (hist["date"] > hist["date"].max() - pd.Timedelta(28, "D"))]
 chart = pd.concat([
     recent.set_index("date")[["units"]].rename(columns={"units": "Sold"}),
     fc[fc["item"] == item].set_index("date")[["units", "low", "high"]]

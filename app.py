@@ -59,6 +59,14 @@ def backtest(hist):
     return (pred["units_pred"] - pred["units"]).abs().mean(), (naive["units_naive"] - naive["units"]).abs().mean()
 
 
+def skip_items(hist):
+    """Items too new to forecast (under 3 weeks of sales) and items that stopped selling (none in 2 weeks)."""
+    last_day = hist["date"].max()
+    seen = hist[hist["units"] > 0].groupby("item")["date"].agg(["min", "max"])
+    return (seen.index[seen["min"] > last_day - pd.Timedelta(3 * HORIZON, "D")],
+            seen.index[seen["max"] <= last_day - pd.Timedelta(14, "D")])
+
+
 def order_message(safe, stock, start, end):
     """Order = safe amount minus what's in stock, per item. None means fully stocked."""
     order = (safe - stock)[safe > stock]
@@ -99,16 +107,27 @@ if len({date_col, item_col, units_col}) < 3:
 try:
     df = pd.DataFrame({
         "date": parse_dates(raw[date_col]).dt.normalize(),
-        "item": raw[item_col].astype(str),
+        "item": raw[item_col].astype(str).str.strip(),
         "units": pd.to_numeric(raw[units_col], errors="raise"),
     })
 except (ValueError, TypeError) as e:
     st.error(f"Couldn't read those columns. Dates should look like 2026-08-01 or 01/08/2026, units should be numbers. ({str(e).splitlines()[0]})")
     st.stop()
 
+# "croissant" and "Croissant" are one item: use its most common spelling
+df["item"] = df["item"].groupby(df["item"].str.casefold()).transform(lambda s: s.mode()[0])
 hist = daily(df)
 if hist["date"].nunique() < 3 * HORIZON:
     st.error("Need at least 3 weeks of sales history to forecast.")
+    st.stop()
+
+too_new, stopped = skip_items(hist)
+if len(too_new):
+    st.info(f"Too new to forecast (under 3 weeks of sales): {', '.join(too_new)}")
+if len(stopped):
+    st.info(f"Left out, no sales in the last 2 weeks: {', '.join(stopped)}")
+hist = hist[~hist["item"].isin(too_new.union(stopped))]
+if hist.empty:
     st.stop()
 
 fc, (mae, naive_mae) = run(hist)

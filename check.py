@@ -28,7 +28,13 @@ accuracy = next(c.value for c in at.caption if "units per item per day" in c.val
 assert "Order to cover" in at.code[0].value, at.code[0].value  # stock defaults to 0, so everything is ordered
 print(plan, accuracy, at.code[0].value, sep="\n\n")
 
-from app import order_message, parse_dates  # noqa: E402  (importing reruns the app once with the fake model)
+from app import order_message, parse_dates, skip_items  # noqa: E402  (importing reruns the app once with the fake model)
+
+days = pd.date_range("2026-08-01", periods=42)
+sold = {"Bread": [1] * 42, "New": [0] * 30 + [1] * 12, "Gone": [1] * 20 + [0] * 22}
+too_new, stopped = skip_items(pd.DataFrame(
+    [(d, item, u) for item, units in sold.items() for d, u in zip(days, units)], columns=["date", "item", "units"]))
+assert list(too_new) == ["New"] and list(stopped) == ["Gone"], (too_new, stopped)
 
 safe = pd.Series({"Bread": 10, "Milk": 5})
 week = pd.Timestamp("2026-10-19"), pd.Timestamp("2026-10-25")

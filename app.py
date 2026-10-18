@@ -85,7 +85,8 @@ st.write("Upload your past sales. Get next week's demand per item, with a safe a
 
 file = st.file_uploader("Sales CSV: one row per sale or per day, with a date, an item, and units sold", type="csv")
 if RUNTIME == "TabPFN API":
-    st.caption("Your daily sales per item are sent to Prior Labs' TabPFN API to make the forecast. "
+    st.caption("Your daily sales per item are sent to Prior Labs' TabPFN API to make the forecast; "
+               "Prior Labs may cache them briefly and never trains on customer data. "
                "Restock never saves your file; it stays in memory for at most an hour.")
 if file is None and st.button("Try it with sample bakery data"):
     st.session_state.sample = True
@@ -114,6 +115,13 @@ except (ValueError, TypeError) as e:
     st.error(f"Couldn't read those columns. Dates should look like 2026-08-01 or 01/08/2026, units should be numbers. ({str(e).splitlines()[0]})")
     st.stop()
 
+today, last = pd.Timestamp.today().normalize(), df["date"].max()
+if file is None:  # keep the demo current: move the sample forward by whole weeks, so weekdays still line up
+    df["date"] += pd.Timedelta(7 * ((today - pd.Timedelta(1, "D") - last).days // 7), "D")
+elif today - last > pd.Timedelta(7, "D"):
+    st.warning(f"Your sales end on {last:%d %b %Y}, so this forecast covers dates that have already passed. "
+               "Upload newer sales for next week's order.")
+
 # "croissant" and "Croissant" are one item: use its most common spelling
 df["item"] = df["item"].groupby(df["item"].str.casefold()).transform(lambda s: s.mode()[0])
 hist = daily(df)
@@ -128,6 +136,7 @@ if len(stopped):
     st.info(f"Left out, no sales in the last 2 weeks: {', '.join(stopped)}")
 hist = hist[~hist["item"].isin(too_new.union(stopped))]
 if hist.empty:
+    st.warning("Nothing left to forecast. Restock needs items with at least 3 weeks of sales, including some in the last 2 weeks.")
     st.stop()
 
 fc, (mae, naive_mae) = run(hist)
@@ -135,10 +144,11 @@ fc, (mae, naive_mae) = run(hist)
 st.subheader("Next 7 days")
 plan = fc.groupby("item")[["units", "high"]].sum().round().astype(int)
 plan.columns = ["Expected", "Safe amount"]
-st.dataframe(plan, width="stretch")
+st.table(plan)  # plain table: nothing to click, so it doesn't look editable
 st.caption("Safe amount: enough if every day runs busy.")
 
 st.subheader("What to order")
+st.caption("✏️ Type how many you have on the shelf now in **In stock now**, then press Enter. The order below updates.")
 stock = st.data_editor(
     pd.DataFrame({"In stock now": 0}, index=plan.index),
     column_config={"In stock now": st.column_config.NumberColumn(min_value=0, step=1)},

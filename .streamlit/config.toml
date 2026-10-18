@@ -1,5 +1,13 @@
 [browser]
 gatherUsageStats = false  # no Streamlit telemetry calls from shop owners' browsers
 
+# blue like the chart's forecast line; Streamlit's default red looks like an error.
+# Set per mode: a plain [theme] section turns off the Light/Dark switcher.
+[theme.light]
+primaryColor = "#2563eb"
+
+[theme.dark]
+primaryColor = "#2563eb"
+
 [server]
 maxUploadSize = 10  # MB; the free Render instance has 512 MB of memory

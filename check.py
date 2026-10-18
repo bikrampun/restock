@@ -22,7 +22,7 @@ sys.modules["tabpfn"] = types.SimpleNamespace(TabPFNRegressor=FakeRegressor)
 at = AppTest.from_file("app.py", default_timeout=60).run()
 at.button[0].click().run()
 assert not at.exception and not at.error, (at.exception, at.error)
-plan = at.dataframe[0].value
+plan = at.table[0].value
 assert len(plan) == 5 and (plan.iloc[:, 1] >= plan.iloc[:, 0]).all(), plan
 accuracy = next(c.value for c in at.caption if "units per item per day" in c.value)
 assert "Order to cover" in at.code[0].value, at.code[0].value  # stock defaults to 0, so everything is ordered

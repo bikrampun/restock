@@ -57,8 +57,8 @@ def run(hist):
     return forecast(hist), backtest(hist)
 
 
-st.set_page_config(page_title="Restock", page_icon="🥐")
-st.title("🥐 Restock")
+st.set_page_config(page_title="Restock", page_icon="📦")
+st.title("📦 Restock")
 st.write("Upload your past sales. Get next week's demand per item, with a safe amount to prep or order.")
 
 file = st.file_uploader("Sales CSV: one row per sale or per day, with a date, an item, and units sold", type="csv")
@@ -101,14 +101,15 @@ item = st.selectbox("Day by day for", plan.index)
 recent = hist[(hist["item"] == item) & (hist["date"] > hist["date"].max() - pd.Timedelta(28, "D"))]
 chart = pd.concat([
     recent.set_index("date")[["units"]].rename(columns={"units": "Sold"}),
-    fc[fc["item"] == item].set_index("date")[["units", "low", "high"]]
+    fc[fc["item"] == item].set_index("date")[["units", "high", "low"]]  # column order = legend/color order
       .rename(columns={"units": "Forecast", "low": "Quiet day", "high": "Busy day"}),
 ])
-st.line_chart(chart)
+st.line_chart(chart, color=["#94a3b8", "#2563eb", "#f59e0b", "#14b8a6"])
 
 better = (1 - mae / naive_mae) * 100
+source = "your own data" if file is not None else "the sample data (made up, with clean weekly patterns, so real sales will likely score lower)"
 st.caption(
-    f"Checked on your own data: forecasting your last 7 days without seeing them, TabPFN was off by "
+    f"Checked on {source}: forecasting the last 7 days without seeing them, TabPFN was off by "
     f"{mae:.1f} units per item per day, vs {naive_mae:.1f} for 'same as last week' "
     f"({abs(better):.0f}% {'better' if better >= 0 else 'worse'}). Runs on {RUNTIME}."
 )

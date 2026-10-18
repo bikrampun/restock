@@ -1,3 +1,4 @@
+import altair as alt  # ships with streamlit
 import pandas as pd
 import streamlit as st
 from dotenv import load_dotenv
@@ -213,7 +214,17 @@ chart = pd.concat([
     fc[fc["item"] == item].set_index("date")[["units", "high", "low"]]  # column order = legend/color order
       .rename(columns={"units": "Forecast", "low": "Quiet day", "high": "Busy day"}),
 ])
-st.line_chart(chart, color=["#94a3b8", "#2563eb", "#f59e0b", "#14b8a6"])
+long = chart.rename_axis("Date").reset_index().melt("Date", var_name="Type", value_name="Units").dropna()
+base = alt.Chart(long).encode(  # Altair, not st.line_chart: its tooltip says "value" and "color"
+    x=alt.X("Date:T", title=None),
+    y=alt.Y("Units:Q", title=None),
+    color=alt.Color("Type:N", legend=alt.Legend(orient="bottom", title=None, symbolType="stroke", symbolOpacity=1, symbolStrokeWidth=3),
+                    scale=alt.Scale(domain=list(chart.columns), range=["#94a3b8", "#2563eb", "#f59e0b", "#14b8a6"])),
+    tooltip=[alt.Tooltip("Date:T", format="%a %d %b"), "Type:N", alt.Tooltip("Units:Q", format=".0f")],
+)
+st.altair_chart(base.mark_line() + base.mark_circle(size=150, opacity=0.01), width="stretch")  # faint dots = hover targets
+st.caption("Grey: what you sold in the last 4 weeks. Blue: expected next 7 days. Orange and green: a busy or a quiet day. "
+           "The safe amount adds up the orange line.")
 
 better = (1 - mae / naive_mae) * 100
 source = "your own data" if file is not None else "the sample data (made up, with clean weekly patterns, so real sales will likely score lower)"

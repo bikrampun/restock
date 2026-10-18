@@ -1,5 +1,8 @@
 import pandas as pd
 import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()  # local dev reads TABPFN_TOKEN from .env; Render sets it in the dashboard
 
 try:  # open weights on your own machine: pip install tabpfn
     from tabpfn import TabPFNRegressor
@@ -28,10 +31,10 @@ def featurize(df, items, t0):
     })
 
 
-def forecast(hist, days=HORIZON):
+def forecast(hist):
     items = sorted(hist["item"].unique())
     t0 = hist["date"].min()
-    dates = pd.date_range(hist["date"].max() + pd.Timedelta(days=1), periods=days)
+    dates = pd.date_range(hist["date"].max() + pd.Timedelta(days=1), periods=HORIZON)
     future = pd.MultiIndex.from_product([dates, items], names=["date", "item"]).to_frame(index=False)
     model = TabPFNRegressor(categorical_features_indices=[0])
     model.fit(featurize(hist, items, t0), hist["units"])

@@ -8,7 +8,7 @@ Before showing a forecast, it hides your last 7 days, forecasts them, and tells 
 
 ```sh
 pip install -r requirements.txt
-export TABPFN_TOKEN=...   # free key: https://platform.priorlabs.ai/account/api-keys
+cp .env.example .env   # then paste your free key from https://platform.priorlabs.ai/account/api-keys
 streamlit run app.py
 ```
 

@@ -83,6 +83,21 @@ st.set_page_config(page_title="Restock", page_icon="📦")
 st.title("📦 Restock")
 st.write("Upload your past sales. Get next week's demand per item, with a safe amount to prep or order.")
 
+st.markdown("""<style>  /* a big drop target: the default upload box is a thin bar */
+[data-testid="stFileUploaderDropzone"] { border: 2px dashed #2563eb; background: rgba(37, 99, 235, .08); }
+[data-testid="stFileUploaderDropzone"]:has([data-testid="stFileUploaderDropzoneInstructions"]) {
+    flex-direction: column; justify-content: center; align-items: center; gap: .75rem; min-height: 12rem;
+}
+[data-testid="stFileUploaderDropzoneInstructions"] {
+    order: -1; display: flex; flex-direction: column; align-items: center; margin: 0;
+}
+[data-testid="stFileUploaderDropzoneInstructions"]::before {  /* Lucide "cloud-upload" icon (ISC license) */
+    order: -2; content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><path d='M12 13v8'/><path d='M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242'/><path d='m8 17 4-4 4 4'/></svg>");
+}
+[data-testid="stFileUploaderDropzoneInstructions"]::after {
+    content: "Drop your sales CSV here or click Upload"; font-size: 1.1rem; order: -1;
+}
+</style>""", unsafe_allow_html=True)
 file = st.file_uploader("Sales CSV: one row per sale or per day, with a date, an item, and units sold", type="csv")
 if RUNTIME == "TabPFN API":
     st.caption("Your daily sales per item are sent to Prior Labs' TabPFN API to make the forecast; "

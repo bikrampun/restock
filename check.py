@@ -3,6 +3,7 @@ import sys
 import types
 
 import numpy as np
+import pandas as pd
 from streamlit.testing.v1 import AppTest
 
 
@@ -23,5 +24,12 @@ at.button[0].click().run()
 assert not at.exception and not at.error, (at.exception, at.error)
 plan = at.dataframe[0].value
 assert len(plan) == 5 and (plan.iloc[:, 1] >= plan.iloc[:, 0]).all(), plan
-assert "units per item per day" in at.caption[0].value, at.caption[0].value
-print(plan, at.caption[0].value, sep="\n\n")
+accuracy = next(c.value for c in at.caption if "units per item per day" in c.value)
+print(plan, accuracy, sep="\n\n")
+
+from app import parse_dates  # noqa: E402  (importing reruns the app once with the fake model)
+
+day_first = parse_dates(pd.Series(["01/08/2026", "12/08/2026", "13/08/2026"]))
+assert day_first.dt.strftime("%Y-%m-%d").tolist() == ["2026-08-01", "2026-08-12", "2026-08-13"], day_first
+us = parse_dates(pd.Series(["08/01/2026", "08/13/2026"]))
+assert us.dt.strftime("%Y-%m-%d").tolist() == ["2026-08-01", "2026-08-13"], us

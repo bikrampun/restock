@@ -14,6 +14,13 @@ except ImportError:  # hosted: reads TABPFN_TOKEN from the environment
 HORIZON = 7
 
 
+def parse_dates(s):
+    try:
+        return pd.to_datetime(s)
+    except ValueError:  # e.g. 13/08/2026: day-first, common outside the US
+        return pd.to_datetime(s, dayfirst=True)
+
+
 def daily(df):
     """Sum to one row per day per item, filling days with no sales as 0."""
     wide = df.groupby(["date", "item"])["units"].sum().unstack(fill_value=0).asfreq("D", fill_value=0)
@@ -75,14 +82,18 @@ date_col = c1.selectbox("Date column", cols, guess("date", "day", "sold_at"))
 item_col = c2.selectbox("Item column", cols, guess("item", "product", "name", "sku"))
 units_col = c3.selectbox("Units column", cols, guess("units", "qty", "quantity", "sold"))
 
+if len({date_col, item_col, units_col}) < 3:
+    st.error("Your file needs three different columns: a date, an item, and units sold.")
+    st.stop()
+
 try:
     df = pd.DataFrame({
-        "date": pd.to_datetime(raw[date_col]).dt.normalize(),
+        "date": parse_dates(raw[date_col]).dt.normalize(),
         "item": raw[item_col].astype(str),
         "units": pd.to_numeric(raw[units_col], errors="raise"),
     })
 except (ValueError, TypeError) as e:
-    st.error(f"Couldn't read those columns: {e}")
+    st.error(f"Couldn't read those columns. Dates should look like 2026-08-01 or 01/08/2026, units should be numbers. ({str(e).splitlines()[0]})")
     st.stop()
 
 hist = daily(df)
@@ -94,8 +105,9 @@ fc, (mae, naive_mae) = run(hist)
 
 st.subheader("Next 7 days")
 plan = fc.groupby("item")[["units", "high"]].sum().round().astype(int)
-plan.columns = ["Expected", "Safe amount (if every day runs busy)"]
+plan.columns = ["Expected", "Safe amount"]
 st.dataframe(plan, width="stretch")
+st.caption("Safe amount: enough if every day runs busy.")
 
 item = st.selectbox("Day by day for", plan.index)
 recent = hist[(hist["item"] == item) & (hist["date"] > hist["date"].max() - pd.Timedelta(28, "D"))]

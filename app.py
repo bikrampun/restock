@@ -59,7 +59,14 @@ def backtest(hist):
     return (pred["units_pred"] - pred["units"]).abs().mean(), (naive["units_naive"] - naive["units"]).abs().mean()
 
 
-@st.cache_data(show_spinner="Asking TabPFN about next week...")
+def order_message(safe, stock, start, end):
+    """Order = safe amount minus what's in stock, per item. None means fully stocked."""
+    order = (safe - stock)[safe > stock]
+    lines = "\n".join(f"- {item}: {qty}" for item, qty in order.items())
+    return f"Order to cover {start:%a %d %b} to {end:%a %d %b}:\n{lines}" if lines else None
+
+
+@st.cache_data(max_entries=20, ttl="1h", show_spinner="Asking TabPFN about next week...")
 def run(hist):
     return forecast(hist), backtest(hist)
 
@@ -69,6 +76,9 @@ st.title("📦 Restock")
 st.write("Upload your past sales. Get next week's demand per item, with a safe amount to prep or order.")
 
 file = st.file_uploader("Sales CSV: one row per sale or per day, with a date, an item, and units sold", type="csv")
+if RUNTIME == "TabPFN API":
+    st.caption("Your daily sales per item are sent to Prior Labs' TabPFN API to make the forecast. "
+               "Restock never saves your file; it stays in memory for at most an hour.")
 if file is None and st.button("Try it with sample bakery data"):
     st.session_state.sample = True
 if file is None and not st.session_state.get("sample"):
@@ -108,6 +118,19 @@ plan = fc.groupby("item")[["units", "high"]].sum().round().astype(int)
 plan.columns = ["Expected", "Safe amount"]
 st.dataframe(plan, width="stretch")
 st.caption("Safe amount: enough if every day runs busy.")
+
+st.subheader("What to order")
+stock = st.data_editor(
+    pd.DataFrame({"In stock now": 0}, index=plan.index),
+    column_config={"In stock now": st.column_config.NumberColumn(min_value=0, step=1)},
+    width="stretch",
+)["In stock now"].fillna(0).astype(int)  # a cleared cell comes back empty
+start, end = fc["date"].min(), fc["date"].max()
+message = order_message(plan["Safe amount"], stock, start, end)
+if message:
+    st.code(message, language=None)
+else:
+    st.success(f"Fully stocked for {start:%a %d %b} to {end:%a %d %b}, nothing to order.")
 
 item = st.selectbox("Day by day for", plan.index)
 recent = hist[(hist["item"] == item) & (hist["date"] > hist["date"].max() - pd.Timedelta(28, "D"))]

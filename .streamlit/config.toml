@@ -1,0 +1,5 @@
+[browser]
+gatherUsageStats = false  # no Streamlit telemetry calls from shop owners' browsers
+
+[server]
+maxUploadSize = 10  # MB; the free Render instance has 512 MB of memory
